@@ -1,17 +1,39 @@
 ---
 import Base from "../layouts/Base.astro";
-import { posts } from "../data/posts.js";
 ---
-<Base title="Uji Astro Blog" description="Blog minimal untuk eksperimen Astro dan Cloudflare Pages.">
-  <p class="muted">BLOG MINIMAL · ASTRO</p>
-  <h1>Catatan kecil,<br />di ruang digital.</h1>
-  <p class="muted">Ini adalah blog percobaan untuk menguji alur pengelolaan website melalui ChatGPT, GitHub, dan Cloudflare Pages.</p>
-  <h2>Artikel terbaru</h2>
-  {posts.map((post) => (
-    <article class="post">
-      <time datetime={post.date}>{new Date(post.date + "T00:00:00").toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" })}</time>
-      <h2><a href={`/blog/${post.slug}/`}>{post.title}</a></h2>
-      <p>{post.description}</p>
-    </article>
-  ))}
+<Base title="UD. Dikha Jalak Suren Bali | Toko Burung di Dalung" description="Informasi UD. Dikha Jalak Suren Bali, toko burung di Dalung, Kuta Utara, Badung, Bali. Hubungi toko untuk informasi ketersediaan dan harga.">
+  <section class="hero">
+    <p class="eyebrow">TOKO BURUNG · DALUNG, BALI</p>
+    <h1>UD. Dikha<br />Jalak Suren Bali</h1>
+    <p class="muted">Temukan informasi toko dan hubungi kami untuk menanyakan ketersediaan burung, harga, serta layanan sebelum berkunjung.</p>
+    <div class="actions">
+      <a class="button primary" href="https://wa.me/6287723457380">Hubungi via WhatsApp</a>
+      <a class="button" href="tel:+6287723457380">Telepon toko</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Selamat datang</h2>
+    <p>UD. Dikha Jalak Suren Bali merupakan toko burung yang berlokasi di Dalung, Kecamatan Kuta Utara, Kabupaten Badung, Bali. Nama usaha ini dikenal dengan jalak suren dan aktivitas jual beli burung.</p>
+    <p>Untuk memastikan jenis burung yang tersedia, harga terbaru, kelengkapan dokumen, dan pilihan pengiriman, silakan menghubungi toko secara langsung.</p>
+  </section>
+
+  <section class="panel">
+    <h2>Informasi toko</h2>
+    <div class="details">
+      <p><strong>Alamat</strong><br />Jl. I Gusti Ngurah Gentuh No.28, Dalung, Kec. Kuta Utara, Kabupaten Badung, Bali 80351</p>
+      <p><strong>Telepon / WhatsApp</strong><br /><a href="https://wa.me/6287723457380">+62 877-2345-7380</a></p>
+      <p><strong>Jam operasional tercantum</strong><br />Setiap hari, 10.30–20.00 WITA</p>
+      <p><strong>Ulasan Google</strong><br />Rating 4,9 dari 30 ulasan (data listing publik saat dibuat)</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Berencana berkunjung?</h2>
+    <p>Hubungi toko terlebih dahulu untuk memastikan jam buka, ketersediaan burung, dan informasi harga sebelum datang.</p>
+    <div class="actions">
+      <a class="button primary" href="https://wa.me/6287723457380">Tanya melalui WhatsApp</a>
+      <a class="button" href="/kontak/">Lihat kontak & lokasi</a>
+    </div>
+  </section>
 </Base>
