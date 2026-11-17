@@ -1,0 +1,17 @@
+---
+import Base from "../layouts/Base.astro";
+import { posts } from "../data/posts.js";
+---
+<Base title="Uji Astro Blog" description="Blog minimal untuk eksperimen Astro dan Cloudflare Pages.">
+  <p class="muted">BLOG MINIMAL · ASTRO</p>
+  <h1>Catatan kecil,<br />di ruang digital.</h1>
+  <p class="muted">Ini adalah blog percobaan untuk menguji alur pengelolaan website melalui ChatGPT, GitHub, dan Cloudflare Pages.</p>
+  <h2>Artikel terbaru</h2>
+  {posts.map((post) => (
+    <article class="post">
+      <time datetime={post.date}>{new Date(post.date + "T00:00:00").toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" })}</time>
+      <h2><a href={`/blog/${post.slug}/`}>{post.title}</a></h2>
+      <p>{post.description}</p>
+    </article>
+  ))}
+</Base>
