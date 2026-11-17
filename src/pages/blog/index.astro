@@ -1,0 +1,15 @@
+---
+import Base from "../../layouts/Base.astro";
+import { posts } from "../../data/posts.js";
+---
+<Base title="Blog · Uji Astro Blog" description="Semua artikel di Uji Astro Blog.">
+  <p class="muted">ARSIP</p>
+  <h1>Semua artikel</h1>
+  {posts.map((post) => (
+    <article class="post">
+      <time datetime={post.date}>{new Date(post.date + "T00:00:00").toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" })}</time>
+      <h2><a href={`/blog/${post.slug}/`}>{post.title}</a></h2>
+      <p>{post.description}</p>
+    </article>
+  ))}
+</Base>
