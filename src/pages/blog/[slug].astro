@@ -1,0 +1,21 @@
+---
+import Base from "../../layouts/Base.astro";
+import { posts } from "../../data/posts.js";
+
+export function getStaticPaths() {
+  return posts.map((post) => ({ params: { slug: post.slug }, props: { post } }));
+}
+
+const { post } = Astro.props;
+---
+<Base title={`${post.title} · Uji Astro Blog`} description={post.description}>
+  <p class="muted"><a href="/blog/">← Semua artikel</a></p>
+  <article>
+    <time datetime={post.date}>{new Date(post.date + "T00:00:00").toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" })}</time>
+    <h1>{post.title}</h1>
+    <p class="muted">{post.description}</p>
+    <div class="content">
+      {post.content.map((paragraph) => <p>{paragraph}</p>)}
+    </div>
+  </article>
+</Base>
